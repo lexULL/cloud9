@@ -5,6 +5,7 @@ void WinMainCRTStartup()
 {
 	ShowCursor( 0 );
 	HWND  hWnd = CreateWindowExA( 0, ( LPCSTR )0xC018, 0, WS_POPUP | WS_VISIBLE | WS_MAXIMIZE, 0, 0, 0, 0, 0, 0, 0, 0 );
+	if (!hWnd) ExitProcess(2u);
 #else
 #include <stdio.h>
 int WinMain( HINSTANCE hThisInstance, HINSTANCE hPrevInstance, LPSTR lpszArgument, int nFunsterStil )
@@ -22,7 +23,7 @@ int WinMain( HINSTANCE hThisInstance, HINSTANCE hPrevInstance, LPSTR lpszArgumen
 	} 
 	while ( !GetAsyncKeyState( VK_ESCAPE ) );
 
-	r_exit();
+	// r_exit();
 
 	ExitProcess( 0 );
 }
