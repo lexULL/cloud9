@@ -23,7 +23,5 @@ int WinMain( HINSTANCE hThisInstance, HINSTANCE hPrevInstance, LPSTR lpszArgumen
 	} 
 	while ( !GetAsyncKeyState( VK_ESCAPE ) );
 
-	// r_exit();
-
 	ExitProcess( 0 );
 }

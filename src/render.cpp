@@ -2,7 +2,6 @@
 #define D3DCompile yyy
 
 #include "render.h"
-// #include "shader.h"
 
 #ifdef _DEBUG
 #include <stdio.h>
@@ -126,6 +125,7 @@ void r_init(HWND hwnd)
     dvc->CreateUnorderedAccessView(_wt, nullptr, (ID3D11UnorderedAccessView**)&SwapChainDesc[19]);
     dvc->CreateShaderResourceView(_wt, nullptr, (ID3D11ShaderResourceView**)&SwapChainDesc[20]);
 
+	// 3D erosion texture
     ID3D11Texture3D* et = nullptr;
     dvc->CreateTexture3D(&ed, nullptr, &et);
     dvc->CreateUnorderedAccessView(et, nullptr, (ID3D11UnorderedAccessView**)&SwapChainDesc[21]);
@@ -252,12 +252,4 @@ void r_loop()
 {
 	ctx->Dispatch(XRES >> 3, YRES >> 3, 1u);
 	sc->Present(0u, 0u);
-}
-
-void r_exit()
-{
-	pcs->Release();
-	sc->Release();
-	ctx->Release();
-	dvc->Release();
 }

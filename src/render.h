@@ -13,7 +13,6 @@ extern ID3D11ComputeShader    *pcs;
 
 void r_init(HWND hwnd);
 void r_loop();
-void r_exit();
 
 #define XRES        1920
 #define YRES        1080
