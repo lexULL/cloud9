@@ -150,6 +150,7 @@
     <Bscmake />
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\shader.h" />
     <ClInclude Include="src\render.h" />
   </ItemGroup>
   <ItemGroup>
